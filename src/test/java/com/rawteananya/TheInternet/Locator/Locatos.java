@@ -13,7 +13,7 @@ public class Locatos {
         /* Locators : A locator is a way to identify a particula web element on a webpage so Selenium can perform an action on it.
         For example:  WebElement username = driver.findElement(By.id("username"));
 
-        Here:
+        Here:-
         findElement() → finds the element
         By.id() → tells Selenium how to find it
         "username" → tells Selenium which value to look for
