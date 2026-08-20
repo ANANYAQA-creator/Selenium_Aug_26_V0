@@ -15,7 +15,7 @@ public class cssSelector_Descendant_Child {
 
         //
        // WebElement fullName =driver.findElement(By.cssSelector("input[placeholder='Full Name']"));
-        fullName.sendKeys("ABCTest");
+       // fullName.sendKeys("ABCTest");
 
 
 
