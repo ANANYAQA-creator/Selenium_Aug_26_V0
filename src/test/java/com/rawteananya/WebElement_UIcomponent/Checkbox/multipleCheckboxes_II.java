@@ -1,4 +1,4 @@
-package com.rawteananya.WebElement_UIcomponent;
+package com.rawteananya.WebElement_UIcomponent.Checkbox;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
