@@ -33,7 +33,6 @@ Click it.
        // System.out.println(enableAfter.isEnabled());
        // enableAfter.click();
 
-
         WebElement enableAfter = wait.until(
                 ExpectedConditions.elementToBeClickable(
                         By.id("enableAfter")
