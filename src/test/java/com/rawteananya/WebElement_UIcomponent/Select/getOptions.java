@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class selectBygetOptions {
+public class getOptions {
 
     public static void main(String[] args) {
 
