@@ -18,24 +18,65 @@ public class AutoSuggestions {
         driver.get("https://www.agoda.com/en-in/country/india.html?site_id=1922866&tag=6baf0092-ba12-4227-a109-d643e16d2b9b&gad_source=1&gad_campaignid=21255828605&gbraid=0AAAAA9_WXQoAAq0k-js5teskcAsCfTTJB&gclid=CjwKCAjw48TUBhBREiwAK0GnQfFWx5wzinwLgsr60LwDNumR5GmBEzq6HbE5q0WJkR1CVoOsJWeVmxoCO0YQAvD_BwE&ds=MwAGFgCApzgJe5fh");
         driver.manage().window().maximize();
 
-        //searchBox
-        WebElement searchBox = driver.findElement(By.xpath("//input[@aria-label='Enter a destination or property']"));
+        // Search Box
+        WebElement searchBox = driver.findElement(By.xpath("//input[@aria-label='Enter a destination or property']")
+        );
+
+        // Enter search text
         searchBox.sendKeys("r");
 
-        // Wait to appear element
+        // Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@class='Suggestion__categoryName_container']")));
+        // Suggestion locator
+        By suggestionLocator = By.cssSelector("span[data-selenium='suggestion-text']");
 
-        //Suggestion
-        List<WebElement> allSuggestion = driver.findElements(By.xpath("//li[@class='Suggestion__categoryName_container']"));
+        // Wait until at least one suggestion is visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(suggestionLocator));
 
-        // print all suggestion
-        for (WebElement suggestion : allSuggestion){
-            System.out.println(suggestion.getText());
+        // Get all suggestions
+        List<WebElement> allSuggestion = driver.findElements(suggestionLocator);
+        boolean suggestionFound = false;
+
+        // Print and select required suggestion
+        for (WebElement suggestion : allSuggestion)
+        {String suggestionText = suggestion.getText().trim();
+            System.out.println("Suggestion: " + suggestionText
+            );
+
+            if (suggestionText.equalsIgnoreCase("Rome")) {
+                suggestion.click();
+                suggestionFound = true;
+                break;
+            }
         }
-        // total suggestion
-        System.out.println("Total no. of Suggestion :" + allSuggestion.size());
-        //quit
+
+        // Verify selection
+        if (suggestionFound) {
+            String selectedSuggestion =
+                    searchBox.getAttribute("value");
+            System.out.println(
+                    "Selected Suggestion: " +
+                            selectedSuggestion
+            );
+            if (selectedSuggestion
+                    .toLowerCase()
+                    .contains("rome")) {
+                System.out.println(
+                        "Suggestion selected successfully"
+                );
+
+            } else {
+                System.out.println("Suggestion selection verification failed"
+                );
+            }
+        } else {
+            System.out.println(
+                    "Required suggestion 'Rome' not found"
+            );
+        }
+
+        // Total suggestions
+        System.out.println("Total No. of Suggestions: " + allSuggestion.size());
         driver.quit();
     }
 }
