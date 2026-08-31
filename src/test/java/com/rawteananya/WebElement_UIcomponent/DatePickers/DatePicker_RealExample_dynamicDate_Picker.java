@@ -71,4 +71,3 @@ public class DatePicker_RealExample_dynamicDate_Picker {
         driver.quit();
     }
 }
-
