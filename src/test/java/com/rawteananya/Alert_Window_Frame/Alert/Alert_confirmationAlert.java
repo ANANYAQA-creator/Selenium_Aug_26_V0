@@ -1,4 +1,4 @@
-package com.rawteananya.Alerts_Frames_WindowHandle;
+package com.rawteananya.Alert_Window_Frame.Alert;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
