@@ -1,4 +1,4 @@
-package com.rawteananya.Actions_JavaScriptExecutor;
+package com.rawteananya.Actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
