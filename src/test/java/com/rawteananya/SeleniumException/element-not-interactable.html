@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Element Not Interactable Demo</title>
+</head>
+
+<body>
+
+<h2>Element Not Interactable Demo</h2>
+
+<input id="username"
+       type="text"
+       placeholder="Username"
+       style="display:none;">
+
+<button id="showButton" onclick="showInput()">
+    Show Input
+</button>
+
+<script>
+    function showInput() {
+        document.getElementById("username").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

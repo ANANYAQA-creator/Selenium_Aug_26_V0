@@ -44,7 +44,7 @@ Task: Write an XPath using starts-with() that finds the username input.
 Ans
 WebElement username = driver.findElement(By.xpath("//input[starts-with(@id,'user_')]"))*/
 
-        // StaleElementReferenceException + Explicit Wait
+        // StaleElementReferenceDemo + Explicit Wait
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/dynamic-properties");
