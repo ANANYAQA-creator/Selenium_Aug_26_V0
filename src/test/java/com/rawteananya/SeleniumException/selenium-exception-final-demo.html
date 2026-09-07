@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selenium Exception Final Challenge</title>
+</head>
+
+<body>
+
+<h1>Selenium Exception Final Challenge</h1>
+
+<!-- ================= USERNAME SECTION ================= -->
+
+<h2>1. Username Section</h2>
+
+<input id="username"
+       type="text"
+       placeholder="Username"
+       style="display:none;">
+
+<button id="showUsername"
+        onclick="document.getElementById('username').style.display='block';">
+    Show Username
+</button>
+
+
+<!-- ================= DELAYED MESSAGE ================= -->
+
+<h2>2. Delayed Message</h2>
+
+<button id="showMessage" onclick="showMessage()">
+    Show Message
+</button>
+
+<p id="message" style="display:none;">
+    Delayed message loaded successfully
+</p>
+
+
+<!-- ================= IFRAME ================= -->
+
+<h2>3. Iframe Section</h2>
+
+<iframe id="userFrame"
+        name="userFrame"
+        srcdoc="
+        <!DOCTYPE html>
+        <html>
+        <body>
+            <h3>Inside User Frame</h3>
+            <input id='frameUsername'
+                   type='text'
+                   placeholder='Frame Username'>
+        </body>
+        </html>
+        ">
+</iframe>
+
+
+<!-- ================= NEW WINDOW ================= -->
+
+<h2>4. Window Section</h2>
+
+<button id="openWindow"
+        onclick="openNewWindow()">
+    Open New Window
+</button>
+
+
+<script>
+
+function showMessage() {
+
+    setTimeout(function() {
+
+        document.getElementById('message').style.display = 'block';
+
+    }, 4000);
+
+}
+
+function openNewWindow() {
+
+    const newWindow = window.open("", "_blank",
+        "width=800,height=600");
+
+    newWindow.document.write(`
+
+        <!DOCTYPE html>
+
+        <html>
+
+        <head>
+            <title>Child Window</title>
+        </head>
+
+        <body>
+
+            <h1>Child Window</h1>
+
+            <p id="childMessage">
+                This is the child window.
+            </p>
+
+            <input id="childInput"
+                   type="text"
+                   placeholder="Child Window Input">
+
+        </body>
+
+        </html>
+
+    `);
+
+    newWindow.document.close();
+
+}
+
+</script>
+
+</body>
+</html>

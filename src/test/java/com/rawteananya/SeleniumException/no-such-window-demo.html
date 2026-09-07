@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium - NoSuchWindowException Demo</title>
+</head>
+
+<body>
+
+<h1>Main Window</h1>
+<p id="mainSection">
+    This is the Main Window section.
+</p>
+
+<button id="openWindowButton" onclick="openNewWindow()">
+    Open New Window
+</button>
+
+<p id="mainStatus"></p>
+
+<script>
+function openNewWindow() {
+    const newWindow = window.open("", "_blank", "width=800,height=600");
+
+    newWindow.document.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>New Window</title>
+        </head>
+        <body>
+            <h1>New Window</h1>
+
+            <p id="newWindowSection">
+                This is the New Window section.
+            </p>
+
+            <input id="newWindowInput"
+                   type="text"
+                   placeholder="Enter text">
+
+            <button id="newWindowButton"
+                    onclick="document.getElementById('newWindowResult').innerText='Button clicked successfully';">
+                Click New Window Button
+            </button>
+
+            <p id="newWindowResult"></p>
+        </body>
+        </html>
+    `);
+
+    newWindow.document.close();
+}
+</script>
+
+</body>
+</html>

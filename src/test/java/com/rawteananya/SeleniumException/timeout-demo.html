@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timeout Exception Demo</title>
+</head>
+
+<body>
+
+<h2>Timeout Exception Demo</h2>
+
+<button id="showButton" onclick="showMessage()">
+    Show Message
+</button>
+
+<p id="message" style="display:none;">
+    Message displayed successfully
+</p>
+
+<script>
+    function showMessage() {
+        setTimeout(function() {
+            document.getElementById("message").style.display = "block";
+        }, 5000);
+    }
+</script>
+
+</body>
+</html>
