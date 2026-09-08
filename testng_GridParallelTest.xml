@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM
+        "https://testng.org/testng-1.0.dtd">
+
+<suite name="Grid Parallel Suite"
+       parallel="methods"
+       thread-count="3">
+
+    <test name="Cross Browser Tests">
+        <classes>
+            <class name="com.rawteananya.SeleniumGrid.SeleniumGridBasic.GridParallelTest"/>
+        </classes>
+    </test>
+</suite>
